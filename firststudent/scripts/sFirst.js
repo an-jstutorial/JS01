@@ -1,4 +1,5 @@
 
+//Write your code below....
 line(100, 100, 200, 200);
 drawText('zuzu ', 300, 250, 30);
 drawText('hi my name is calliou  nice to meet you.' , 300, 150, 30);
