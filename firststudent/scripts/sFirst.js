@@ -9,4 +9,3 @@ rect(200, 200, 200, 300);
 //drawImage('./images/kid-cartoon.jpg', 20, 20, 100);
 //drawImage('./images/rainbow.jpg', 80, 80, 100);
 drawImage('./images/caillou.png', 120, 120, 200);
-//animate();
