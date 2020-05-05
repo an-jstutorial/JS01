@@ -1,10 +1,32 @@
 <html>
   <head>
     <title>Javascript Main Page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script>
+      var openPage = function(url) {
+        location.href = url;
+      }
+    </script>
   </head>
   <body>
     <h1>Javascript Main Page</h1>
-    <button type="button" onclick="location.href = './teacher/index.html';" id="button-teacher" name="Teacher">Teacher Page</button>
-    <button type="button" onclick="location.href = './firststudent/index.html';" id="button-firststudent" name="First Student">First Student Page</button>
+    <!--<button type="button" onclick="location.href = './teacher/index.html';" id="button-teacher" name="Teacher">Teacher Page</button>-->
+    <!--<br>
+    <button type="button" onclick="location.href = './firststudent/index.html';" id="button-firststudent" name="First Student">Teacher Page</button> <br>
+    <br>-->
+
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./adi/index.html');" id="button-adi" name="Adi">Adi's Page</button> <br><br>
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./advik/index.html');" id="button-advik" name="Advik">Advik's Page</button> <br><br>
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./arin/index.html');" id="button-arin" name="Arin">Arin's Page</button> <br><br>
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./ivy/index.html');" id="button-ivy" name="Ivy">Ivy's Page</button> <br><br>
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./mason/index.html');" id="button-mason" name="Mason">Mason's Page</button> <br><br>
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./rohan/index.html');" id="button-rohan" name="Rohan">Rohan's Page</button> <br><br>
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./sohum/index.html');" id="button-sohum" name="Sohum">Sohum's Page</button> <br><br>
+    <button type="button" class="w3-button w3-round-large w3-blue" onclick="openPage('./vismay/index.html');" id="button-vismay" name="Vismay">Vismay's Page</button> <br><br>
+
+    <!--<input type="checkbox" id="checkbox-inline" checked>Inline View</input>
+    <div id="display-area"></div>-->
   </body>
 </html>

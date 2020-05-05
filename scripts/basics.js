@@ -55,7 +55,8 @@ var animate = function() {
   var ctx = getCanvasContext();
   if(ctx) {
     ctx.clearRect(0, 0, 900, 500);
-    ctx.drawImage(img, xPos, 120);
+    var width = 200;
+    ctx.drawImage(img, xPos, 120, width, width*img.height/img.width);
     xPos -= 4;
     if (xPos > 0) requestAnimationFrame(animate);
   }
@@ -66,6 +67,11 @@ var xPos = 600;
 
 var drawText = function(text, x, y, size) {
   var ctx = getCanvasContext();
+  if(!x) {
+    x = 200;
+    y = 50;
+    size = 30;
+  }
   ctx.fillStyle = "#FF0000";
   ctx.font = size + 'px Georgia';
   ctx.fillText(text, x, y);
