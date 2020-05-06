@@ -57,13 +57,13 @@ var animate = function() {
     ctx.clearRect(0, 0, 900, 500);
     var width = 200;
     ctx.drawImage(img, xPos, 120, width, width*img.height/img.width);
-    xPos -= 4;
-    if (xPos > 0) requestAnimationFrame(animate);
+    xPos += 4;
+    if (xPos < 700) requestAnimationFrame(animate);
   }
 };
 
 img.onload = animate();
-var xPos = 600;
+var xPos = 50;
 
 var drawText = function(text, x, y, size) {
   var ctx = getCanvasContext();
