@@ -6,9 +6,16 @@ var r1 = 70;
 var r2 = 40;
 var r3 = 20;
 
+var increaseOrReduce = 'increase';
+
 drawScreen = function() {
-  if(x<830) {
+  if(increaseOrReduce == 'increase') {
     x = x+5;
+  } else {
+    x = x-5;
+  }
+  if(x>830) {
+    increaseOrReduce = 'decrease';
   }
 
   var color = 'green';
@@ -20,6 +27,7 @@ drawScreen = function() {
 
   drawSurface(color);
   drawSnowman();
+  //drawImage('./images/caillou.png', 120, 120, 200);
 };
 
 var drawSnowman = function() {
