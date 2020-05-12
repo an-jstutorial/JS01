@@ -17,11 +17,16 @@ var line = function(x1, y1, x2, y2) {
   ctx.stroke();
 };
 
-var rect = function(x1, y1, h, w) {
+var rect = function(x1, y1, h, w, color) {
   var ctx = getCanvasContext();
-  ctx.beginPath();
-  ctx.rect(x1, y1, h, w);
-  ctx.stroke();
+  if(color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x1, y1, h, w);
+  } else {
+    ctx.beginPath();
+    ctx.rect(x1, y1, h, w);
+    ctx.stroke();
+  }
 };
 
 var circle = function(x, y, r) {
@@ -47,6 +52,17 @@ var drawImage = function(url, x, y, width) {
       ctx.drawImage(img, x, y, width, width*img.height/img.width);
   };
 };
+
+var drawScreen;
+var redrawScreen = function() {
+  var ctx = getCanvasContext();
+  if(ctx && drawScreen) {
+    ctx.clearRect(0, 0, 900, 500);
+    drawScreen();
+  }
+  requestAnimationFrame(redrawScreen);
+};
+redrawScreen();
 
 var img = new Image();
 img.src = './images/caillou.png';

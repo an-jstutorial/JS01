@@ -1,13 +1,35 @@
 
 //Write your code below....
-drawText('This is my workspace');
-line(100, 100, 200, 200);
-drawText('This is my workspace');
-drawText('hi my name is calliou  nice to meet you.' , 300, 150, 30);
-circle(300, 300, 70);
-ellipse(300, 300, 40, 60);
-rect(200, 200, 200, 300);
-//drawImage('./images/kid-cartoon.jpg', 20, 20, 100);
-//drawImage('./images/rainbow.jpg', 80, 80, 100);
-drawImage('./images/caillou.png', 120, 120, 200);
-animate();
+var x = 70;
+var y = 400;
+var r1 = 70;
+var r2 = 40;
+var r3 = 20;
+
+drawScreen = function() {
+  if(x<830) {
+    x = x+5;
+  }
+
+  var color = 'green';
+  if(x < 400) {
+    color = 'red';
+  } else {
+    color = 'green';
+  }
+
+  drawSurface(color);
+  drawSnowman();
+};
+
+var drawSnowman = function() {
+  circle(x, y, r1);
+  var y2 = y-r1-r2;
+  circle(x, y2, r2);
+  var y3 = y2-r2-r3;
+  circle(x, y3, r3);
+};
+
+var drawSurface = function(color) {
+  rect(0, y+r1, 900, 100, color);
+};
