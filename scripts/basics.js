@@ -29,28 +29,43 @@ var rect = function(x1, y1, h, w, color) {
   }
 };
 
-var circle = function(x, y, r) {
+var circle = function(x, y, r, color) {
   var ctx = getCanvasContext();
   ctx.beginPath();
   ctx.arc(x, y, r, 0, 2 * Math.PI);
+  if(color) {
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
   ctx.stroke();
 };
 
-var ellipse = function(x1, y1, xr, yr) {
+var ellipse = function(x1, y1, xr, yr, color) {
   var ctx = getCanvasContext();
   ctx.beginPath();
   ctx.ellipse(x1, y1, xr, yr, 0, 0, Math.PI * 2, false);
+  if(color) {
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
   ctx.stroke();
 };
+
+var imgMap = {};
 
 var drawImage = function(url, x, y, width) {
   var ctx = getCanvasContext();
   //ctx.globalAlpha = 0.5;
-  var img = new Image();
-  img.src = url;
-  img.onload = function (e) {
-      ctx.drawImage(img, x, y, width, width*img.height/img.width);
-  };
+  var img = imgMap[url];
+  if(!img) {
+    img = new Image();
+    imgMap[url] = img;
+    img.src = url;
+    img.onload = function (e) {
+        ctx.drawImage(img, x, y, width, width*img.height/img.width);
+    };
+  }
+  ctx.drawImage(img, x, y, width, width*img.height/img.width);
 };
 
 var drawScreen;
@@ -64,8 +79,8 @@ var redrawScreen = function() {
 };
 redrawScreen();
 
-var img = new Image();
-img.src = './images/caillou.png';
+//var img = new Image();
+//img.src = './images/caillou.png';
 
 var animate = function() {
   var ctx = getCanvasContext();
@@ -78,7 +93,7 @@ var animate = function() {
   }
 };
 
-img.onload = animate();
+//img.onload = animate();
 var xPos = 50;
 
 var drawText = function(text, x, y, size) {
