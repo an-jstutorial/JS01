@@ -20,11 +20,6 @@ drawScreen = function() {
   } else if(x < 70) {
     moveForward = true;
   }
-  // if(imgY == 300) {
-  //   imgY = 270;
-  // } else {
-  //   imgY = 300;
-  // }
 
   var color = 'green';
   if(x < 400) {
@@ -34,9 +29,18 @@ drawScreen = function() {
   }
 
   drawSurface(color);
-  drawSnowman();
-  drawImage('./images/caillou.png', x-40, imgY, 150);
+  //drawSnowman();
+  drawImage('./images/caillou.png', x-40, imgY, 120);
   //drawImage('./images/kid-cartoon.jpg', 120, 120, 200);
+};
+
+var imageJump = function() {
+  if(imgY == 300) {
+    imgY = 250;
+  } else {
+    imgY = 300;
+  }
+  setTimeout(imageJump, 300);
 };
 
 var drawSnowman = function() {
@@ -50,3 +54,5 @@ var drawSnowman = function() {
 var drawSurface = function(color) {
   rect(0, y+r1, 900, 100, color);
 };
+
+imageJump();
