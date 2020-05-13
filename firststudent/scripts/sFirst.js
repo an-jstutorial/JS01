@@ -8,6 +8,7 @@ var r3 = 20;
 var imgY = 300;
 
 var moveForward = true;
+var textList = ['First', 'Second', 'third', 'Fourth', 'Fifth'];
 
 drawScreen = function() {
   if(moveForward) {
@@ -28,9 +29,18 @@ drawScreen = function() {
     color = 'green';
   }
 
+  for(var i=0; i<5; i++) {
+    drawText(textList[i], (i+1)*80, (i+1)*80, 30);
+  }
+
+  // drawText('My Text 1', 200, 200, 30);
+  // drawText('My Text 1', 300, 300, 30);
+  // drawText('My Text 1', 400, 400, 30);
+  // drawText('My Text 1', 500, 500, 30);
+
   drawSurface(color);
   //drawSnowman();
-  drawImage('./images/caillou.png', x-40, imgY, 120);
+  drawImage('./images/caillou.png', x-40, imgY, 150);
   //drawImage('./images/kid-cartoon.jpg', 120, 120, 200);
 };
 
