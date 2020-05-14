@@ -5,10 +5,13 @@ var y = 400;
 var r1 = 70;
 var r2 = 40;
 var r3 = 20;
-var imgY = 300;
+var imgY = 0;
 
+var cPos = 0;
 var moveForward = true;
 var textList = ['First', 'Second', 'third', 'Fourth', 'Fifth'];
+var imgYLoc = [0, 80, 160, 240, 320];
+var imgXLoc = [0, 40, 120, 200, 280];
 
 drawScreen = function() {
   if(moveForward) {
@@ -16,7 +19,7 @@ drawScreen = function() {
   } else {
     x = x-5;
   }
-  if(x>830) {
+  if(x>=830) {
     moveForward = false;
   } else if(x < 70) {
     moveForward = true;
@@ -40,15 +43,19 @@ drawScreen = function() {
 
   drawSurface(color);
   //drawSnowman();
-  drawImage('./images/caillou.png', x-40, imgY, 150);
+  drawImage('./images/caillou.png', imgXLoc[cPos], imgYLoc[cPos], 120);
   //drawImage('./images/kid-cartoon.jpg', 120, 120, 200);
 };
 
 var imageJump = function() {
-  if(imgY == 300) {
-    imgY = 250;
-  } else {
-    imgY = 300;
+  //if(imgY == 300) {
+  //  imgY = 200;
+  //} else {
+  //  imgY = 300;
+  //}
+  cPos++;
+  if(cPos==5) {
+    cPos = 0;
   }
   setTimeout(imageJump, 300);
 };
