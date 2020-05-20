@@ -18,7 +18,7 @@ drawScreen = function() {
   if(bgStart <= -900) {
     bgStart = -5;
   } else {
-    bgStart -= 5;
+    bgStart = bgStart - 5;
   }
   if(moveForward) {
     x = x+5;
@@ -47,9 +47,9 @@ drawScreen = function() {
   // drawText('My Text 1', 400, 400, 30);
   // drawText('My Text 1', 500, 500, 30);
 
-  drawImage('./images/city.png', bgStart, 0, 900);
-  drawImage('./images/city.png', bgStart+900, 0, 900);
-  //ViewBackground.draw();
+  //drawImage('./images/city.png', bgStart, 0, 900);
+  //drawImage('./images/city.png', bgStart+900, 0, 900);
+  ViewBackground.draw();
   //drawSurface(color);
   //drawSnowman();
   drawImage('./images/caillou.png', 400, imgY, 150);
@@ -99,20 +99,20 @@ var ViewBackground = {
   }
 };
 
-// var canvas = document.getElementById("myCanvas");
-//
-// canvas.addEventListener('click', function(event) {
-//   if(ViewBackground.isMoving) {
-//     ViewBackground.isMoving = false;
-//   } else {
-//     ViewBackground.isMoving = true;
-//   }
-// }, false);
-//
-// window.addEventListener('keydown', function(event) {
-//   if(event.keyCode == 38) {
-//     imgY = 200;
-//   } else if(event.keyCode == 40) {
-//     imgY = 300;
-//   }
-// }, false);
+var canvas = document.getElementById("myCanvas");
+
+canvas.addEventListener('click', function(event) {
+  if(ViewBackground.isMoving) {
+    ViewBackground.isMoving = false;
+  } else {
+    ViewBackground.isMoving = true;
+  }
+}, false);
+
+window.addEventListener('keydown', function(event) {
+  if(event.keyCode == 38) {
+    imgY = 200;
+  } else if(event.keyCode == 40) {
+    imgY = 300;
+  }
+}, false);
