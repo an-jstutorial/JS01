@@ -14,6 +14,8 @@ var textList = ['First', 'Second', 'third', 'Fourth', 'Fifth'];
 var imgYLoc = [0, 80, 160, 240, 320];
 var imgXLoc = [0, 40, 120, 200, 280];
 
+var textToShow = '';
+
 drawScreen = function() {
   if(bgStart <= -900) {
     bgStart = -5;
@@ -54,6 +56,11 @@ drawScreen = function() {
   //drawSnowman();
   drawImage('./images/caillou.png', 400, imgY, 150);
   //drawImage('./images/kid-cartoon.jpg', 120, 120, 200);
+  textToShow = textInHtml.value;
+  drawText(textToShow, 200, 200, 30);
+  if(textToShow == 'show') {
+    placeholder.innerHTML = "<button>Good</button>";
+  }
 };
 
 var imageJump = function() {
@@ -99,6 +106,12 @@ var ViewBackground = {
   }
 };
 
+var header = document.getElementById("topHeader");
+header.innerHTML = "<h1>New Design</h1>";
+
+var textInHtml = document.getElementById("myText");
+var placeholder = document.getElementById("dynamicData");
+
 var canvas = document.getElementById("myCanvas");
 
 canvas.addEventListener('click', function(event) {
@@ -112,7 +125,10 @@ canvas.addEventListener('click', function(event) {
 window.addEventListener('keydown', function(event) {
   if(event.keyCode == 38) {
     imgY = 200;
+    header.innerHTML = "<h1>Up</h1>";
+    //setTimeout(imageJump, 300);
   } else if(event.keyCode == 40) {
     imgY = 300;
+    header.innerHTML = "<h1>Down</h1>";
   }
 }, false);
