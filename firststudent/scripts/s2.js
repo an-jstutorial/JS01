@@ -13,6 +13,7 @@ drawImage('https://shrewsburyma.gov/ImageRepository/Document?documentID=1519', 8
 drawImage('./images/caillou.png', 120, 120, 200);
 drawImage('https://www.google.com/imgres?imgurl=https%3A%2F%2Ffreeaddon.com%2Fwallpaper%2Fcharizard%2Fthumb444x250-03.jpg&imgrefurl=https%3A%2F%2Ffreeaddon.com%2Fcharizard-wallpaper-pokemon-new-tab-themes%2F&tbnid=TzydgkedgtkW-M&vet=10CAgQMygDahcKEwjY4feg6aLpAhUAAAAAHQAAAAAQBA..i&docid=Nct6gBiVRkkQlM&w=444&h=250&q=pokemon%20charizard&ved=0CAgQMygDahcKEwjY4feg6aLpAhUAAAAAHQAAAAAQBA',120,120,100 );
 
+
 //Write your code below....
 var x = 70;
 var y = 400;
