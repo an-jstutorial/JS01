@@ -40,9 +40,9 @@ drawScreen = function() {
     color = 'green';
   }
 
-  for(var i=0; i<5; i++) {
-    drawText(textList[i], (i+1)*80, (i+1)*80, 30);
-  }
+  // for(var i=0; i<5; i++) {
+  //   drawText(textList[i], (i+1)*80, (i+1)*80, 30);
+  // }
 
   // drawText('My Text 1', 200, 200, 30);
   // drawText('My Text 1', 300, 300, 30);
@@ -55,7 +55,7 @@ drawScreen = function() {
   //drawSurface(color);
   //drawSnowman();
   drawImage('./images/caillou.png', 400, imgY, 150);
-  drawImage('./images/charizard.png', 200, imgY, 250);
+  //drawImage('./images/charizard.png', 200, imgY, 250);
   //drawImage('./images/kid-cartoon.jpg', 120, 120, 200);
   textToShow = textInHtml.value;
   drawText(textToShow, 200, 200, 30);
@@ -103,6 +103,9 @@ var ViewBackground = {
       if(this.startPos <= -900) {
         this.startPos = 0;
       }
+      drawText('', 400, 100, 30);
+    } else {
+      drawText('Paused', 400, 100, 30);
     }
   }
 };
