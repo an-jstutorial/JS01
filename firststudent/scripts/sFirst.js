@@ -55,6 +55,7 @@ drawScreen = function() {
   //drawSurface(color);
   //drawSnowman();
   drawImage('./images/caillou.png', 400, imgY, 150);
+  drawImage('./images/charizard.png', 200, imgY, 250);
   //drawImage('./images/kid-cartoon.jpg', 120, 120, 200);
   textToShow = textInHtml.value;
   drawText(textToShow, 200, 200, 30);
@@ -107,7 +108,7 @@ var ViewBackground = {
 };
 
 var header = document.getElementById("topHeader");
-header.innerHTML = "<h1>New Design</h1>";
+//header.innerHTML = "<h1>New Design</h1>";
 
 var textInHtml = document.getElementById("myText");
 var placeholder = document.getElementById("dynamicData");
