@@ -7,6 +7,12 @@ var r2 = 40;
 var r3 = 20;
 var imgY = 300;
 var bgStart = 0;
+var imgX = 400;
+var imgSize = 150;
+
+var kidX = 300;
+
+var score = 0;
 
 var cPos = 0;
 var moveForward = true;
@@ -17,6 +23,16 @@ var imgXLoc = [0, 40, 120, 200, 280];
 var textToShow = '';
 
 drawScreen = function() {
+  imgX = imgX + 5;
+  if(imgX > 900) {
+    imgX = 0;
+    //score = score + 10;
+  }
+
+  if(kidX == imgX) {
+    score = score + 10;
+  }
+
   if(bgStart <= -900) {
     bgStart = -5;
   } else {
@@ -54,10 +70,11 @@ drawScreen = function() {
   ViewBackground.draw();
   //drawSurface(color);
   //drawSnowman();
-  drawImage('./images/caillou.png', 400, imgY, 150);
+  drawImage('./images/caillou.png', imgX, imgY, imgSize);
   //drawImage('./images/charizard.png', 200, imgY, 250);
-  //drawImage('./images/kid-cartoon.jpg', 120, 120, 200);
+  drawImage('./images/kid-cartoon.jpg', kidX, 400, 100);
   textToShow = textInHtml.value;
+  drawText('Score: ' + score, 750, 100, 30);
   drawText(textToShow, 200, 200, 30);
   if(textToShow == 'show') {
     placeholder.innerHTML = "<button>Good</button>";
