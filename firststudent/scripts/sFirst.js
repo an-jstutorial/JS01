@@ -26,7 +26,7 @@ drawScreen = function() {
   imgX = imgX + 5;
   if(imgX > 900) {
     imgX = 0;
-    //score = score + 10;
+    score = score + 10;
   }
 
   if(kidX == imgX) {
