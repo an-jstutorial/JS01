@@ -24,6 +24,7 @@ var restart = function () {
 }
 var timeoutSet = false;
 var whenbumps = function() {
+  drawText('Charizard caught you', 300,160,40)
   drawImage('./images/boom.png', 400,0,200);
   // if (ViewBackground.isMoving == true) {
   //     lives = lives-1;
@@ -93,8 +94,6 @@ drawScreen = function() {
   drawImage('./images/charizard0.png',cx,cy,350);
   //drawSurface(color);
   //drawSnowman();
-  drawImage('./images/caillou.png', 400, imgY, 150);
-  drawImage('./images/unnamed.png', rock,350,150);
   drawImage('./images/pokeball.png',rock+200,400,50);
   drawImage('./images/pokeball.png',rock-200,400,50);
   drawImage('./images/pokeball.png',rock+260,400,50);
@@ -103,6 +102,8 @@ drawScreen = function() {
   drawImage('./images/pokeball.png',rock-320,400,50);
   drawImage('./images/pokeball.png',rock-140,400,50);
   drawImage('./images/pokeball.png',rock-80,400,50);
+  drawImage('./images/unnamed.png', rock,350,150);
+  drawImage('./images/caillou.png', 400, imgY, 150);
   if (lives > 0) {
   drawImage('./images/cmon.png',hx,hy,100);
   }
