@@ -1,3 +1,0 @@
-
-//Write your code below....
-drawText('This is my workspace');
