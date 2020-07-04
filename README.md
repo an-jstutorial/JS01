@@ -10,7 +10,7 @@ JavaScript Basic Tutorial
 3.	Click on GitHub footer icon and select “Clone an existing GitHub repository”.
  ![](images/image008.jpg)
  
-4.	Clone the repository from https://github.com/tradesmartdev/JS01.git to any local empty directory.
+4.	Clone the repository from https://github.com/an-jstutorial/JS01.git to any local empty directory.
  ![](images/image010.jpg)
  
 
